@@ -1,6 +1,6 @@
 # PandaAI
 
-Basic, all-python chess AI made in the process of learning some libraries. 
+Basic all-python chess AI made in the process of learning some libraries. 
 
 # Dependencies
 
