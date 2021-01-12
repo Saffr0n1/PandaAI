@@ -6,6 +6,8 @@ Estimated valuations per piece for classical chess taken from AlphaZero self-pla
 
 General chess programing concepts: https://www.chessprogramming.org/
 
+Opening book used: [Perfect Book 2019](https://sites.google.com/site/computerschess/perfect2019books)
+
 # Dependencies
 
 [Python Chess](https://python-chess.readthedocs.io/): `pip install chess`
