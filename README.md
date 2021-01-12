@@ -1,6 +1,6 @@
 # PandaAI
 
-Basic all-python chess AIs made in the process of learning some libraries. Simplest version utilizes minimax (negamax) and alpha-beta pruning. Always being updated. 
+Basic all-python chess AI made in the process of learning some libraries. Simplest version utilizes minimax (negamax) and alpha-beta pruning. Always being updated. 
 
 Estimated valuations per piece for classical chess taken from AlphaZero self-play games: https://arxiv.org/pdf/2009.04374.pdf
 
