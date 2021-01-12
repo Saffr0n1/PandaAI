@@ -15,13 +15,13 @@ def quiesce(A, B, board):
     for move in board.legal_moves:
         if board.is_capture(move):
             board.push(move)
-            score = -quiesce(-B, -A, board)
+            gameState = -quiesce(-B, -A, board)
             board.pop()
 
-        if score >= B:
-            return B
-        if score > A:
-            A = score
+            if gameState >= B:
+                return B
+            if gameState > A:
+                A = gameState
 
     return A
 
@@ -32,7 +32,7 @@ def negamaxAB(A, B, depth, board):
 
     maxScore = -999999
 
-    for move in board.legal_moves():
+    for move in board.legal_moves:
         board.push(move)
         score = -negamaxAB(-B, -A, depth - 1, board)
         board.pop()
@@ -55,14 +55,14 @@ def nextMove(depth, board):
         maxScore = -999999
         A = -1000000
         B = 1000000
-        for move in board.legal_moves():
+        for move in board.legal_moves:
             board.push(move)
-            score = -negamaxAB(-B, -A, depth - 1, board)
-            if score > maxScore:
-                maxScore = score
+            state = -negamaxAB(-B, -A, depth - 1, board)
+            if state > maxScore:
+                maxScore = state
                 goodMove = move
-            if score > A:
-                A = score
+            if state > A:
+                A = state
 
             board.pop()
         return goodMove
