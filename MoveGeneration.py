@@ -46,12 +46,23 @@ def negamaxAB(A, B, depth, board):
 
     return maxScore
 
+
 def nextMove(depth, board):
     try:
         return chess.polyglot.MemoryMappedReader("Perfect2019.bin").weighted_choice(board).move
     except:
-        
+        goodMove = chess.Move.null()
+        maxScore = -999999
+        A = -1000000
+        B = 1000000
+        for move in board.legal_moves():
+            board.push(move)
+            score = -negamaxAB(-B, -A, depth - 1, board)
+            if score > maxScore:
+                maxScore = score
+                goodMove = move
+            if score > A:
+                A = score
 
-
-
-
+            board.pop()
+        return goodMove
